@@ -67,9 +67,9 @@ Linux requirements:
 
 2) Execute it in Terminal (this is a command line program). Drag the `dusk` command into your Terminal window and press enter. Or if you want, cd into the extracted release and:
 
-`./dusk`
+`./dusk <drag your ipsw file here>`
 
-Note that on Linux you must run `a999` with root privilages, i.e. `sudo ./dusk`. On Mac you do not need to do this.
+Note that on Linux you must run `dusk` with root privilages, i.e. `sudo ./dusk <drag your ipsw file here>`. On Mac you do not need to do this.
 
 3) Follow the prompts.
 
@@ -107,11 +107,11 @@ In the same folder that the `dusk` command is in, there will be a new command st
 
 ### Why Is My iPhone Not Detected?
 
-Make sure your using a USB-A to lightning cable. If you have to, you can also use a USB-C to USB-A adapter with the USB-A lightning cable plugged into it. If you are using a USBA-A lightning cable correctly, try unplugging the cable and then plugging it back in. Then execute `a999` again.
+Make sure your using a USB-A to lightning cable. If you have to, you can also use a USB-C to USB-A adapter with the USB-A lightning cable plugged into it. If you are using a USBA-A lightning cable correctly, try unplugging the cable and then plugging it back in. Then execute `dusk` again.
 
 ### Why Does It Take So Long? You Say It's Much Faster The Next Time You Run It?
 
-On the first run of Dusk Downgrade, there are many additional steps in the proccess that will trigger automatically for you. **Subsequent runs will be signifigantly shorter and take fewer steps as it caches needed data from the first run locally in the `data` folder.** That `data` folder is very important and personalized to your iPhone. You should back it up because you can put it back in any future a999activator release and it will use that data when it detects your iPhone!
+On the first run of Dusk Downgrade, there are many additional steps in the proccess that will trigger automatically for you. **Subsequent runs will be signifigantly shorter and take fewer steps as it caches needed data from the first run locally in the `data` folder.** That `data` folder is very important and personalized to your iPhone. You should back it up because you can put it back in any future dusk downgrade release and it will use that data when it detects your iPhone!
 
 Similar to the data folder are the `boot*` scripts. These get generated once your iPhone downgrades successfully automatically, and are also personalized to your iPhone and should be backed up so you can reboot the iPhone from Recovery Mode if it dies or your turn it off.
 
@@ -121,15 +121,11 @@ You can also use the `dusk` command to transfer your `data` and `boot*` files fr
 
 ### How Are Errors Handled?
 
-Certian aspects of Turdus_ra1n (exploiting SEP, booting exploited iOS) can fail the first time. This is why A999activator has very extensive if-fail-then-retry logic. It will eventually work, and it won't continue the proccess until it does. So don't be discouraged when it says `Something went wrong, lets try that again` because it's really just working as intended and trying again (sometimes many times to get that PTEBlock) does eventually work out. One exception to this is if turdusra1n/turdus_merula crashes at `- <Log> checkm8 setup stage`. If your stuck here for a long time (more then 30 seconds) I would `ctrl+c` to exit a999activator, unpulg the USB-A to Lightning cable from the USB port on the Mac, then plug it back in before running the `dusk` command again. Unfortunately I don't have a better solution for this yet as it is a turdus merula problem. In a similar vein to above, if you fail to enter DFU mode when prompted or the custom ramdisk fails to boot a999activator notices this and goes back to correct it.
+Certian aspects of Turdus_ra1n (exploiting SEP, booting exploited iOS) can fail the first time. This is why Dusk Downgrade has very extensive if-fail-then-retry logic. It will eventually work, and it won't continue the proccess until it does. So don't be discouraged when it says `Something went wrong, lets try that again` because it's really just working as intended and trying again (sometimes many times to get that PTEBlock) does eventually work out. One exception to this is if turdusra1n/turdus_merula crashes at `- <Log> checkm8 setup stage`. If your stuck here for a long time (more then 30 seconds) I would `ctrl+c` to exit dusk downgrade, unpulg the USB-A to Lightning cable from the USB port on the Mac, then plug it back in before running the `dusk` command again. Unfortunately I don't have a better solution for this yet as it is a turdus merula problem. In a similar vein to above, if you fail to enter DFU mode when prompted or the custom ramdisk fails to boot dusk downgrade notices this and goes back to correct it.
 
 ### What Has Dusk Downgrade Been Tested On?
 
 I have extensively tested Dusk Downgrade with 2 different iPhone 6S Pluses with MacBook Airs on Mac OS 12 as well as a Mac mini on Mac OS 10.12. It is reported to work on even the latest Mac OS. Linux support was developed on Fedora Linux.
-
-### What About iPads with A9(X)?
-
-iPads in theory can work too in a future update, as well as any other A9 device not currently supported.
 
 ## Credits
 
