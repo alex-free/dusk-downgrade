@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# EzRe build script for dusk downgrade.
+version="1.0"
+program=dusk
+release_name=dusk-downgrade-v$version
+set -e
+
+cd "$(dirname "$0")"
+
+sudo rm -rf $release_name $release_name.zip
+
+if [ "$1" == "clean" ]; then
+    exit 0
+fi
+
+mkdir $release_name
+
+if sed --version >/dev/null 2>&1; then
+    echo "Info: using GNU sed"
+    bsd_sed=false
+else
+    echo "Info: using BSD sed"
+    bsd_sed=true
+fi
+
+if [ "$bsd_sed" == "true" ]; then
+    sed -i '' -E "s|^version=.*|version=$version|" $program
+else
+    sed -i'' -E "s|^version=.*|version=$version|" $program
+fi
+
+release_files="$program *.md bin"
+cp -r ${release_files} $release_name
+chmod -R 777 $release_name
+zip -r $release_name.zip $release_name
