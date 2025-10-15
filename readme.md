@@ -95,7 +95,7 @@ Disconnect and reconnect the lightning cable to get past it.
 
 ### Error Failed To Open Handle (No Device) After Checkmate?
 
-This error occurs on Linux when booting iOS 9. Disconnect and reconnect the lightning cable to get past it. The error will appear again but be non-fatal and work.
+Disconnect and reconnect the lightning cable to get past it. The error will appear again but be non-fatal and work.
 
 ### Unable To Successfully Restore Device
 
