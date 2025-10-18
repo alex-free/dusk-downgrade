@@ -1,3 +1,4 @@
+version=1.0
 real_portable_folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$real_portable_folder"
 # Log file.
@@ -8,7 +9,7 @@ source bin/idevice-tool-kit/idevice-tool-kit
 echo -e "Dusk Downgrade v$version\n(C) 2025 (3-BSD)\nhttps://github.com/alex-free/dusk-downgrade"
 
 if [ ! -f "$1" ]; then
-    echo -e "Error: you must provide an ipsw to dusk downgrade.\nUsage:\n\ndusk <ipsw file>\n"
+    echo -e "Error: you must provide an ipsw to dusk downgrade.\nUsage:\n\ndusk <ipsw file>"
     exit 1
 fi
 

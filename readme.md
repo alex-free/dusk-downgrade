@@ -2,7 +2,7 @@
 
 _By Alex Free_
 
-What happens after Apple sunsets your iDevice? Introducing Dusk Downgrade. A completely automatic solution that tether downgrades to iOS 10-iOS 15 for A9 and A10 devices. Made possible by the work of many [others](#credits). For iOS 9, check out my [github](https://github.com/alex-free) as I have a very similar tool dedicated for iOS 9 A9.
+Apple sunsets your iDevice? Introducing Dusk Downgrade. A completely automatic solution that tether downgrades to iOS 10-iOS 15 for A9 and A10 devices. Made possible by the work of many [others](#credits).
 
 * There's many things you can do on iOS 10+ that perhaps you didn't think you still could, here's just a [few](#interesting-things-to-do-on-legacy-ios).
 
@@ -10,14 +10,11 @@ What happens after Apple sunsets your iDevice? Introducing Dusk Downgrade. A com
 
 * Please check the [FAQ](#faq) section for more information and solutions. If you have an issue, please open a [Github issue](https://github.com/alex-free/dusk-downgrade/issues/new?template=issue.md) and fill out the information.
 
-Officially supported devices:
+Supported devices:
 
 * iPhone 6S.
 * iPhone 6S Plus.
 * iPhone SE.
-
-The following devices should work in theory. I have wrote special support functions for them, but can not test until I actually get them in a few days. Please respond to me on reddit or in a [Github issue](https://github.com/alex-free/dusk-downgrade/issues/new?template=issue.md) if you have such a device. Sorry I am impulsive, everything is done I'm just waiting on the A10 hardware to verify it works as it should. I'm sure we can debug any issues if they occur.
-
 * iPhone 7.
 * iPhone 7 Plus.
 
@@ -35,19 +32,29 @@ The following devices should work in theory. I have wrote special support functi
 
 ## Downloads
 
-### Version 1.0 (10/14/2025)
+### Version 2.0 (10/18/2025)
 
-* [dusk-downgrade-v1.0.zip](https://github.com/alex-free/dusk-downgrade/releases/download/v1.0/dusk-downgrade-v1.0.zip) _For Mac OS and for Linux_
+* [dusk-downgrade-v2.0.zip](https://github.com/alex-free/dusk-downgrade/releases/download/v2.0/dusk-downgrade-v2.0.zip) _For Mac OS and for Linux_
 
 Dusk Downgrade is designed to work on Debian, Fedora, and Mac OS 10.12 or newer. x86_64 and ARM64 arches are supported.
 
 Changes:
 
-* Initial release.
+* Official A10 support! iPhone 7 and iPhone 7 Plus that is...
+
+* Removed redundant usbmuxd resets.
+
+* Better `$PATH` handling in boot script. Fixes for tethered restore boots.
+
+* Cleaner interface, silenced USBMUXD on Linux.
+
+[Previous versions](changelog.md)
 
 ## Important Info
 
-If you have an A10 device and restore to iOS 10, you may have baseband/cellular/activation issues. If you can activate and have baseband issues, you can of course enable airplane mode and just use WiFi. iOS 11 and up do not have any of these problems, and neither does A9 on iOS 10 or any version.
+* If you have an A10 device and restore to iOS 10, you may have baseband/cellular/activation issues. If you can activate and have baseband issues, you can of course enable airplane mode and just use WiFi. iOS 11 and up do not have any of these problems, and neither does A9 on iOS 10 or any version.
+
+* When restoring iOS 11 or iOS 10, espically on A10, it may fail many times when booting or restoring... It really does work eventually!
 
 ## Requirements
 
@@ -77,11 +84,11 @@ Note that on Linux you must run `dusk` with root privilages, i.e. `sudo ./dusk <
 
 * Instagram still works from the AppStore.
 
-* YouTube in Safari works.
+* YouTube in Safari works. When you get an AD, refresh and it goes away!
 
 * You can send/recieve FaceTime calls and iMessages to your main iPhone.
 
-* You can use it as your main iPhone (I did for a few weeks). T-Mobile/Mint Mobile in the USA are confirmed working carriers for even the lowest iOS this supports.
+* You can use it as your main iPhone (I did for a few weeks on a 6S Plus). T-Mobile/Mint Mobile in the USA are confirmed working carriers for even the lowest iOS this supports.
 
 ## FAQ
 
@@ -95,7 +102,7 @@ Disconnect and reconnect the lightning cable to get past it.
 
 ### Error Failed To Open Handle (No Device) After Checkmate?
 
-Disconnect and reconnect the lightning cable to get past it. The error will appear again but be non-fatal and work.
+It appears on Linux for A10 this can appear and "fix itself". For A9 not so much.... Disconnect and reconnect the lightning cable to get past it if A9. The error will appear again but be non-fatal and work.
 
 ### Unable To Successfully Restore Device
 

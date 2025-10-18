@@ -1,0 +1,9 @@
+#!/bin/bash
+# Trick lifted from https://docs.website-msw.pages.dev/docs/get-started/installing-palera1n-linux/.
+# No redirect of ouput because we silence this script everytime we call it.
+if [ "$os" = "Linux" ]; then
+    systemctl stop usbmuxd
+    # If usbmuxd is still running kill it forcibly.
+    killall -9 usbmuxd
+    usbmuxd -f -p &
+fi
