@@ -1,4 +1,4 @@
-version=1.0
+version=2.0.1
 real_portable_folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$real_portable_folder"
 # Log file.

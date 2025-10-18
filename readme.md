@@ -32,21 +32,15 @@ Supported devices:
 
 ## Downloads
 
-### Version 2.0 (10/18/2025)
+### Version 2.0.1 (10/18/2025)
 
-* [dusk-downgrade-v2.0.zip](https://github.com/alex-free/dusk-downgrade/releases/download/v2.0/dusk-downgrade-v2.0.zip) _For Mac OS and for Linux_
+* [dusk-downgrade-v2.0.1.zip](https://github.com/alex-free/dusk-downgrade/releases/download/v2.0.1/dusk-downgrade-v2.0.1.zip) _For Mac OS and for Linux_
 
 Dusk Downgrade is designed to work on Debian, Fedora, and Mac OS 10.12 or newer. x86_64 and ARM64 arches are supported.
 
 Changes:
 
-* Official A10 support! iPhone 7 and iPhone 7 Plus that is...
-
-* Removed redundant usbmuxd resets.
-
-* Better `$PATH` handling in boot script. Fixes for tethered restore boots.
-
-* Cleaner interface, silenced USBMUXD on Linux.
+* Fixed execution if boot script was executed from another directory other then the script dir.
 
 [Previous versions](changelog.md)
 
