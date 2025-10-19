@@ -124,10 +124,6 @@ You can also use the `dusk` command to transfer your `data` and `boot*` files fr
 
 Certian aspects of Turdus_ra1n (exploiting SEP, booting exploited iOS) can fail the first time. This is why Dusk Downgrade has very extensive if-fail-then-retry logic. It will eventually work, and it won't continue the proccess until it does. So don't be discouraged when it says `Something went wrong, lets try that again` because it's really just working as intended and trying again (sometimes many times to get that PTEBlock) does eventually work out. One exception to this is if turdusra1n/turdus_merula crashes at `- <Log> checkm8 setup stage`. If your stuck here for a long time (more then 30 seconds) I would `ctrl+c` to exit dusk downgrade, unpulg the USB-A to Lightning cable from the USB port on the Mac, then plug it back in before running the `dusk` command again. Unfortunately I don't have a better solution for this yet as it is a turdus merula problem. In a similar vein to above, if you fail to enter DFU mode when prompted or the custom ramdisk fails to boot dusk downgrade notices this and goes back to correct it.
 
-### What Has Dusk Downgrade Been Tested On?
-
-I have extensively tested Dusk Downgrade with 2 different iPhone 6S Pluses with MacBook Airs on Mac OS 12 as well as a Mac mini on Mac OS 10.12. It is reported to work on even the latest Mac OS. Linux support was developed on Fedora Linux.
-
 ## Credits
 
 * [Sep.lol team](https://sep.lol/) for turdus merula.
