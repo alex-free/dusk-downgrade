@@ -1,4 +1,4 @@
-version=2.0.1
+version=2.0.2
 real_portable_folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$real_portable_folder"
 # Log file.
@@ -6,7 +6,19 @@ exec > >(tee log.txt) 2>&1
 # Load common functions.
 source bin/idevice-tool-kit/idevice-tool-kit
 
-echo -e "Dusk Downgrade v$version\n(C) 2025 (3-BSD)\nhttps://github.com/alex-free/dusk-downgrade"
+echo -e "Dusk Downgrade v$version\n(C) 2025 Alex Free (3-BSD)\nhttps://github.com/alex-free/dusk-downgrade"
+
+# Update functionallity. We need to get 2 things, the data folder and any boot* scripts.
+if [ "$1" == "-u" ]; then
+
+    if [ "$#" -ne 2 ]; then
+        echo "You gave the -u argument, which expect an existing dusk downgrade release directory as the following argument."
+        exit 1
+    fi
+
+    update_existing_data "$2"
+    exit 0
+fi
 
 if [ ! -f "$1" ]; then
     echo -e "Error: you must provide an ipsw to dusk downgrade.\nUsage:\n\ndusk <ipsw file>"
