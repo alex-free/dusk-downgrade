@@ -32,15 +32,17 @@ Supported devices:
 
 ## Downloads
 
-### Version 2.0.2 (10/18/2025)
+### Version 2.0.3 (10/21/2025)
 
-* [dusk-downgrade-v2.0.2.zip](https://github.com/alex-free/dusk-downgrade/releases/download/v2.0.2/dusk-downgrade-v2.0.2.zip) _For Mac OS and for Linux_
+* [dusk-downgrade-v2.0.3.zip](https://github.com/alex-free/dusk-downgrade/releases/download/v2.0.3/dusk-downgrade-v2.0.3.zip) _For Mac OS and for Linux_
 
 Dusk Downgrade is designed to work on Debian, Fedora, and Mac OS 10.12 or newer. x86_64 and ARM64 arches are supported.
 
 Changes:
 
 * Better usbmuxd handling on Linux.
+
+* Fixed pairing issue in normal mode.
 
 [Previous versions](changelog.md)
 

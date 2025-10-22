@@ -1,10 +1,44 @@
-version=2.0.2
+version=2.0.3
 real_portable_folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$real_portable_folder"
 # Log file.
 exec > >(tee log.txt) 2>&1
 # Load common functions.
 source bin/idevice-tool-kit/idevice-tool-kit
+
+check_if_additional_restore_is_needed() {
+
+    get_ver "$1"
+
+    if [ "$ver" = "10.0.1_14A403" ] || \
+    [ "$ver" = "10.0.2_14A456" ] || \
+    [ "$ver" = "10.0.3_14A551" ] || \
+    [ "$ver" = "10.1_14B72c" ] || \
+    [ "$ver" = "10.1.1_14B100" ] || \
+    [ "$ver" = "10.1.1_14B150" ] || \
+    [ "$ver" = "10.2_14C92" ] || \
+    [ "$ver" = "10.2.1_14D27" ] || \
+    [ "$ver" = "10.3_14E277" ] || \
+    [ "$ver" = "10.3.1_14E304" ] || \
+    [ "$ver" = "10.3.2_14F89" ]; then
+        echo "Info: need to restore iOS 10.3.3 first."
+    else
+        return
+    fi
+
+    # Needed for iOS 10.0.1-iOS 10.3.2
+    if [ $device == "iphone_6s" ]; then
+        restore_ipsw http://appldnld.apple.com/ios10.3.3/091-23441-20170719-CA9B0570-6977-11E7-95CC-3F9100BA0AE3/iPhone_4.7_10.3.3_14G60_Restore.ipsw
+    elif [ $device == "iphone_6s_plus" ]; then
+        restore_ipsw http://appldnld.apple.com/ios10.3.3/091-23338-20170719-CA990FD6-6977-11E7-AE41-3B9100BA0AE3/iPhone_5.5_10.3.3_14G60_Restore.ipsw
+    elif [ $device == "iphone_se" ]; then
+        restore_ipsw http://appldnld.apple.com/ios10.3.3/091-23133-20170719-CA8E78E6-6977-11E7-968B-2B9100BA0AE3/iPhone_4.0_64bit_10.3.3_14G60_Restore.ipsw
+    elif [ $device == "iphone_7" ]; then
+        restore_ipsw http://appldnld.apple.com/ios10.3.3/091-23304-20170719-CA9AC9AC-6977-11E7-9507-349100BA0AE3/iPhone_7_10.3.3_14G60_Restore.ipsw
+    elif [ $device == "iphone_7_plus" ]; then
+        restore_ipsw http://appldnld.apple.com/ios10.3.3/091-23119-20170719-CA92905C-6977-11E7-AB61-299100BA0AE3/iPhone_7Plus_10.3.3_14G60_Restore.ipsw
+    fi
+}
 
 echo -e "Dusk Downgrade v$version\n(C) 2025 Alex Free (3-BSD)\nhttps://github.com/alex-free/dusk-downgrade"
 
@@ -34,3 +68,5 @@ not_final_restore=false
 restore_ipsw "$1"
 boot_turdusra1n
 generate_boot_script
+usbmuxd_restart
+echo -e "\nDONE!\n"

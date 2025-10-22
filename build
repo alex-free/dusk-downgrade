@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # EzRe build script for dusk downgrade.
-version="2.0.2"
+version="2.0.3"
 program=dusk
 release_name=dusk-downgrade-v$version
 set -e

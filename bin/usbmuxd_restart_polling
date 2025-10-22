@@ -2,5 +2,5 @@
 # No redirect of ouput because we silence this script everytime we call it.
 systemctl stop usbmuxd
 # If usbmuxd is still running kill it forcibly.
-killall -9 usbmuxd
+killall usbmuxd
 usbmuxd -f -p &
